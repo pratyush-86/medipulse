@@ -1,0 +1,8 @@
+<div class="nav"><span class="brand">&#10010; MediPulse</span>
+  <span class="who">${sessionScope.user.name} &middot; ${sessionScope.user.roleLabel}
+    <a href="${pageContext.request.contextPath}${sessionScope.user.dashboardPath}">Dashboard</a>
+    <a href="${pageContext.request.contextPath}/profile">Profile</a>
+    <a href="${pageContext.request.contextPath}/logout">Sign out</a></span></div>
+<div class="container">
+<c:if test="${not empty sessionScope.flashOk}"><div class="ok"><c:out value="${sessionScope.flashOk}"/></div><c:remove var="flashOk" scope="session"/></c:if>
+<c:if test="${not empty sessionScope.flashErr}"><div class="err"><c:out value="${sessionScope.flashErr}"/></div><c:remove var="flashErr" scope="session"/></c:if>
